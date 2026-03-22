@@ -167,3 +167,106 @@ html {
         transition: none !important;
     }
 }
+
+
+/* Task: Container Link-uri cu Flexbox  SECTIUNEA 8*/
+.tabs-container {
+    display: flex; /* Aliniere orizontală obligatorie */
+    gap: 10px;
+    margin-bottom: -2px; /* Suprapunere ușoară peste border-ul iframe-ului pentru efect de tab */
+    padding-left: 10px;
+}
+
+/* Stilizare link-uri tip "tab" conform video-ului */
+.tab-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: var(--primary-blue);
+    color: var(--vault-gold);
+    border: 2px solid var(--border-metal);
+    border-bottom: none; /* Aspect de tab lipit de container */
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efect de hover identificat în referință */
+.tab-link:hover {
+    background-color: var(--vault-gold);
+    color: var(--bg-dark);
+}
+
+/* Task: Stilizare Iframe cu border */
+.iframe-wrapper {
+    border: 2px solid var(--border-metal);
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0 8px 8px 8px;
+}
+
+.iframe-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    display: block;
+}
+
+/* Responsivitate pentru tab-uri pe mobil */
+@media (max-width: 600px) {
+    .tabs-container {
+        flex-direction: column; /* Pe mobil devin o listă verticală */
+        padding-left: 0;
+    }
+    .tab-link {
+        border-bottom: 2px solid var(--border-metal);
+        border-radius: 4px;
+    }
+}
+
+/* Identificator: stilizare-tabel */
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Bordere suprapuse */
+    border: 5px double var(--vault-gold); /* Border dublu de minim 5px */
+    margin-top: 20px;
+}
+
+/* Poziționare caption sub tabel */
+caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+/* Alternare culori text pe coloane */
+/* Coloane impare (1, 3) - Culoare c1 (Vault Gold) */
+td:nth-child(odd), th:nth-child(odd) {
+    color: var(--vault-gold);
+}
+
+/* Coloane pare (2, 4) - Culoare c2 (Electric Blue/Light Cyan) */
+td:nth-child(even), th:nth-child(even) {
+    color: #00ffff; 
+}
+
+/* Stil de bază celule */
+td, th {
+    border: 1px solid var(--border-metal); /* Grosime inițială 1px */
+    padding: 12px;
+    transition: all 0.75s ease; /* Tranziție de 3 sferturi de secundă */
+}
+
+/* Efect Hover pe Rând */
+tr:hover td {
+    background-color: var(--primary-blue); /* Schimbare treptată background */
+    color: #ffffff !important; /* Schimbare treptată culoare text */
+    border: 5px solid var(--vault-gold); /* Creștere grosime border la 5px */
+}
+
+/* Container cu scrollbar pentru ecrane mici */
+.table-responsive-container {
+    overflow-x: auto; /* Scrollbar orizontal doar pe container */
+    width: 100%;
+}
