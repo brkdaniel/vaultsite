@@ -1,0 +1,169 @@
+/* Task: Definirea variabilelor în body */
+body {
+    --primary-blue: #00458b;
+    --vault-gold: #ffcb05;
+    --bg-dark: #0a0a0a;
+    --text-light: #e0e0e0;
+    --border-metal: #333333;
+    
+    /* Resetare de bază pentru a evita scroll-ul orizontal */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Task 2: Font-size adaptiv pe HTML cu tranzitie */
+html {
+    font-size: 18px;
+    transition: font-size 0.5s ease-in-out;
+}
+
+/* Task 1: Layout-ul cu Grid Template Areas */
+.grid-container {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    /* Structura pentru ecran mare (3 coloane) */
+    grid-template-areas:
+        "z1 z1 z1"
+        "z5 z6 z7"
+        "z3 z3 z2"
+        "z4 z4 z2"
+        "z8 z8 z8";
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* Atribuirea zonelor conform claselor din HTML */
+.zona1 { grid-area: z1; }
+.zona2 { grid-area: z2; border: 2px solid var(--vault-gold); } /* Tabelul */
+.zona3 { grid-area: z3; }
+.zona4 { grid-area: z4; }
+.zona5 { grid-area: z5; }
+.zona6 { grid-area: z6; }
+.zona7 { grid-area: z7; }
+.zona8 { grid-area: z8; }
+
+/* Placeholder styling pentru a vedea zonele 5, 6, 7 */
+[class^="zona"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border: 1px solid var(--border-metal);
+}
+
+/* Task 2: Folosirea unităților relative (rem) */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+p { font-size: 1rem; line-height: 1.6; }
+
+/* --- RESPONSIVITATE --- */
+
+/* Ecran Mediu (Tableta) - Trecem la 2 coloane */
+@media (max-width: 1024px) {
+    html { font-size: 17px; } /* Scade scrisul */
+    
+    .grid-container {
+        grid-template-areas:
+            "z1 z1"
+            "z5 z6"
+            "z7 z3"
+            "z2 z2"
+            "z4 z4"
+            "z8 z8";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Ecran Mic (Mobil) - O singură coloană (display block) */
+@media (max-width: 600px) {
+    html { font-size: 16px; }
+    
+    .grid-container {
+        display: block; /* Nu mai există coloane */
+    }
+    
+    .grid-container > section {
+        margin-bottom: 20px;
+    }
+
+    /* Task 3: Dezactivare animații pe ecran mic */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Stilizare Zona 1 - Poster (F-Pattern) */
+.zona1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(rgba(0, 69, 139, 0.2), rgba(0, 0, 0, 0.8));
+    border-left: 5px solid var(--vault-gold);
+}
+
+.zona1 h2 {
+    color: var(--vault-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Stilizare Zona 2 - Tabel (Ierarhie Vizuală) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1a1a1a;
+}
+
+th {
+    background-color: var(--primary-blue);
+    color: var(--vault-gold);
+    padding: 12px;
+}
+
+td {
+    border: 1px solid var(--border-metal);
+    padding: 10px;
+    text-align: center;
+}
+
+tr:hover {
+    background-color: rgba(255, 203, 5, 0.1); /* Highlight la hover */
+}
+
+/* Ierarhie vizuală: Zona 1 este poster, Zona 8 este stilizată liber */
+.zona1 {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(var(--primary-blue), transparent);
+    border-bottom: 2px solid var(--vault-gold);
+}
+
+/* Zona 8: Stilizare la alegere (Creativitate) */
+.zona8 {
+    border: 2px dashed var(--vault-gold);
+    border-radius: 10px;
+    background-color: rgba(255, 203, 5, 0.05);
+}
+
+/* Evitare Overflow (Tăiere conținut) */
+img, iframe, table {
+    max-width: 100%; /* Important: conținutul nu va ieși din coloana lui */
+    height: auto;
+}
+
+/* Task: Tranziție font-size */
+html {
+    transition: font-size 0.3s ease;
+}
+
+/* Task: Dezactivare animații pe ecran mic */
+@media (max-width: 600px) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}

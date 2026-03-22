@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Daniel Burca-Andonie">
+    <meta name="keywords" content="Vault, video game, Fallout, post-apocalyptic gaming, RPG games, gaming, game rental, vault dweller, bunker">
+    <meta name="description" content="Vault is your trusted source for video game rental inspired by the Fallout universe.">
+    <title>Vault - Uncover the next adventure</title>
+    <link rel="stylesheet" href="resurse/css/style.css">
+</head>
+<body id="top">
+
+    <header>
+        <h1>Vault</h1>
+        <img src="resurse/ico/favicon.ico" alt="sigla" />
+        <nav>
+            <ul>
+                <li>
+                    <a href="#home">Home</a>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#events">Upcoming Events</a></li>
+                    </ul>
+                </li>
+                <li><a href="catalog.html">Game Catalog</a></li>
+                <li><a href="rentals.html">My Rentals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="grid-container">
+        
+        <section class="zona1">
+            <h2>Welcome to the Vault!</h2>
+            <p>The <strong>Vault</strong> is an online store available worldwide which offers premium <strong>video game rental</strong> and buying services. From indie gems to <strong>RPG games</strong>, our <strong>digital vault</strong> provides a large variety of adventures for every dweller.</p>
+            <figure>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="resurse/bunker-lowq.jpg">
+                    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="resurse/bunker-medq.jpg">
+                    <img src="resurse/bunker.jpg" alt="The inside of Vault-Tec" title="See our gaming lounge" style="width:auto;">
+                </picture>
+                <figcaption>Standard living quarters for our premium <i>Vault Dwellers</i>.</figcaption>
+            </figure>
+        </section>
+
+        <section class="zona5">
+            <h3>Online Dwellers</h3>
+            <ul>
+                <li>User_101: Active</li>
+                <li>Overseer_Backup: Idle</li>
+                <li>Vault_Tech_Support: Active</li>
+            </ul>
+        </section>
+
+        <section class="zona6">
+            <h3>User Statistics</h3>
+            <p>Current level: 15. Caps: 1200. Rad-resistance: 40%.</p>
+        </section>
+
+        <section class="zona7">
+            <h3>System Status</h3>
+            <p>Server: 127.0.0.1. Uptime: 99.9%. Connection: Lead-shielded.</p>
+        </section>
+        
+        <section class="zona3" id="events">
+            <h2>Upcoming Wasteland Events</h2>
+            <ul>
+                <li>
+                    <time datetime="2026-05-15T18:00">May 15th, 18:00</time>, 
+                    <b>Retro RPG Night</b> - Join us for a <strong>game rental</strong> marathon.
+                </li>
+                <li>
+                    <time datetime="2026-06-20T12:00">June 20th, 12:00</time>, 
+                    <b>Vault Opening</b> - A special discount for every <strong>RPG games</strong> enthusiast.
+                </li>
+            </ul>
+        </section>
+
+        <section class="zona4">
+            <h2>Announcements</h2>
+            <p>Lorem ipsum: New shipments of Rad-Away arrived in Sector 4. Please report to the Overseer.</p>
+        </section>
+
+        <section class="zona2">
+            <h2>Rental Pricing Plans</h2>
+            <table>
+                <caption>Available Access Levels for Dwellers</caption>
+                <thead>
+                    <tr>
+                        <th>Plan Name</th>
+                        <th>Duration</th>
+                        <th>Game Library</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Surface Scavenger</td>
+                        <td>24h</td>
+                        <td>Indie Titles</td>
+                        <td>10 Caps</td>
+                    </tr>
+                    <tr>
+                        <td>Vault Dweller</td>
+                        <td>7 Days</td>
+                        <td>All Games</td>
+                        <td>50 Caps</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Overseer Bundle</td>
+                        <td>30 Days</td>
+                        <td>Full Access</td>
+                        <td>150 Caps</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Priority Support & Early Access included</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total Membership Benefits</td>
+                        <td>Unlimited</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="zona8">
+            <hgroup id="about">
+                <h2>About Our Digital Vault</h2>
+                <p>Establishing safety for your gaming adventures since 2077.</p>
+            </hgroup>
+
+            <section>
+                <h3>Watch The Latest Game Trailers</h3>
+                <div>
+                    <a href="https://www.youtube.com/embed/KmhMEHMgoHc" target="vault-player">Fallout 76</a> | 
+                    <a href="https://www.youtube.com/embed/QdBZY2fkU-0" target="vault-player">GTA VI</a>
+                </div>
+                <iframe name="vault-player" width="560" height="315" src="https://www.youtube.com/embed/se0qytSM218" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </section>
+
+            <section>
+                <h2>Vault Status Monitor</h2>
+                <p>Supplies: <meter value="15" min="0" max="100" low="30" high="70">Safe</meter></p>
+                <p>Server Load: <meter value="85" min="0" max="100" low="20" high="40">High</meter></p>
+            </section>
+
+            <section>
+                <h2>FAQ & Technical</h2>
+                <details>
+                    <summary>Can I return a game after 7 days?</summary>
+                    <p>Late returns incur a penalty of 5 caps/day.</p>
+                </details>
+                <p>System uses <abbr title="Personal Information Processor">PIP-Boy</abbr> interface.</p>
+                <p>Download: <a href="resurse/manual.pdf" download="Vault_Manual.pdf">Get Manual PDF</a></p>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><a href="#top">Back to the surface (Top)</a></p> 
+        <address>
+            Phone: <a href="tel:+40722000000">+40 722 000 000</a><br>
+            E-mail: <a href="mailto:overseer@vault-tec.com">overseer@vault-tec.com</a>
+        </address>
+        <p><small>Copyright © 2026 Vault - All Rights Reserved</small></p>
+    </footer>
+</body>
+</html>
