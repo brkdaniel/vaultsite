@@ -270,3 +270,63 @@ tr:hover td {
     overflow-x: auto; /* Scrollbar orizontal doar pe container */
     width: 100%;
 }
+
+/* Identificator: link-top */
+
+.back-to-top {
+    position: fixed; /* Poziție fixă */
+    bottom: 20px;
+    right: 20px; /* În josul paginii, în dreapta */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    opacity: 0.5; /* Semi-transparent inițial */
+    transition: opacity 0.5s; /* Tranziție între 300-700ms */
+    z-index: 1000;
+}
+
+/* Efectul de paranteze */
+.paranteze {
+    width: 100%;
+    height: 100%;
+    border-left: 3px solid var(--vault-gold);
+    border-right: 3px solid var(--vault-gold);
+    border-top: none; /* Fără border sus și jos */
+    border-bottom: none;
+    border-radius: 50%; /* Borduri rotunjite stânga-dreapta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+}
+
+/* Construirea triunghiului din borduri */
+.triunghi {
+    width: 0;
+    height: 0;
+    /* Triunghiul: fără border sus, transparente laterale, colorat jos */
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid var(--text-light); 
+    border-top: none;
+    transition: border-bottom-color 0.5s, transform 0.5s;
+}
+
+/* --- EFECTE LA HOVER --- */
+
+.back-to-top:hover {
+    opacity: 1; /* Devine opac */
+}
+
+.back-to-top:hover .triunghi {
+    border-bottom-color: var(--vault-gold); /* Își schimbă culoarea */
+    transform: translateY(-5px); /* Triunghiul urcă un pic */
+}
+
+/* La hover pe link, parantezele se pot mări ușor pentru feedback */
+.back-to-top:hover .paranteze {
+    transform: scale(1.1);
+}
