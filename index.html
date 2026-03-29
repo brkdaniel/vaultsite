@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -14,16 +15,31 @@
         <h1>Vault</h1>
         <img src="resurse/ico/favicon.ico" alt="sigla" />
         <nav>
-            <ul>
+            <label for="ch-menu" class="hamburger">
+                <i class="fas fa-bars"></i>
+            </label>
+            <input type="checkbox" id="ch-menu">
+
+            <ul class="main-menu">
                 <li>
-                    <a href="#home">Home</a>
-                    <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#events">Upcoming Events</a></li>
+                    <a href="index.html">
+                        <i class="fas fa-home"></i> <span>Home</span>
+                    </a>
+                </li>
+                <li class="has-submenu">
+                    <a href="#">
+                        <i class="fas fa-database"></i> <span>Resources</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#vault-info">Vault Info</a></li>
+                        <li><a href="#dwellers">Dwellers</a></li>
                     </ul>
                 </li>
-                <li><a href="catalog.html">Game Catalog</a></li>
-                <li><a href="rentals.html">My Rentals</a></li>
+                <li>
+                    <a href="catalog.html">
+                        <i class="fas fa-book"></i> <span>Catalog</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
