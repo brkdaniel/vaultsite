@@ -7,6 +7,7 @@
     <meta name="keywords" content="Vault, video game, Fallout, post-apocalyptic gaming, RPG games, gaming, game rental, vault dweller, bunker">
     <meta name="description" content="Vault is your trusted source for video game rental inspired by the Fallout universe.">
     <title>Vault - Uncover the next adventure</title>
+    <link rel="stylesheet" href="resurse/css/reset-mathml.css">
     <link rel="stylesheet" href="resurse/css/style.css">
 </head>
 <body id="top">
@@ -162,6 +163,57 @@
                 <h2>Vault Status Monitor</h2>
                 <p>Supplies: <meter value="15" min="0" max="100" low="30" high="70">Safe</meter></p>
                 <p>Server Load: <meter value="85" min="0" max="100" low="20" high="40">High</meter></p>
+            </section>
+
+            <section>
+                <h2>Game Mechanics & Calculations</h2>
+                <p><strong>Weapon Damage Formula:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>Damage</mi>
+                            <mo>=</mo>
+                            <mo>(</mo>
+                            <mi>Base</mi>
+                            <mo>×</mo>
+                            <mn>1.5</mn>
+                            <mo>)</mo>
+                            <mo>+</mo>
+                            <mi>CritBonus</mi>
+                        </mrow>
+                    </math>
+                </p>
+                <p><strong>Experience Points Calculation:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>XP</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>EnemyLevel</mi>
+                                    <mo>×</mo>
+                                    <mn>100</mn>
+                                </mrow>
+                                <mi>PlayerLevel</mi>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+                <p><strong>Radiation Resistance Index:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>ResistanceIndex</mi>
+                            <mo>=</mo>
+                            <msqrt>
+                                <mi>Endurance</mi>
+                            </msqrt>
+                            <mo>+</mo>
+                            <mi>Perk</mi>
+                        </mrow>
+                    </math>
+                </p>
             </section>
 
             <section>
