@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Daniel Burca-Andonie">
     <meta name="keywords" content="Vault, video game, Fallout, post-apocalyptic gaming, RPG games, gaming, game rental, vault dweller, bunker">
     <meta name="description" content="Vault is your trusted source for video game rental inspired by the Fallout universe.">
@@ -12,42 +13,47 @@
 </head>
 <body id="top">
 
-    <header>
-        <h1>Vault</h1>
-        <img src="resurse/ico/favicon.ico" class="logo" alt="Vault Logo">
-        <nav>
-            <label for="ch-menu" class="hamburger">
-                <i class="fas fa-bars"></i>
-            </label>
-            <input type="checkbox" id="ch-menu">
-
-            <ul class="main-menu">
-                <li>
-                    <a href="index.html">
-                        <i class="fas fa-home"></i> <span>Home</span>
-                    </a>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">
-                        <i class="fas fa-database"></i> <span>Resources</span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li><a href="#vault-info">Vault Info</a></li>
-                        <li><a href="#dwellers">Dwellers</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="catalog.html">
-                        <i class="fas fa-book"></i> <span>Catalog</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<header>
+    <h1>Vault</h1>
+    <img src="resurse/ico/favicon.ico" class="logo" alt="Vault Logo">
+    <button class="hamburger-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <nav>
+        <ul class="main-menu">
+            <li>
+                <a href="index.html">
+                    <i class="fas fa-home"></i> <span>Home</span>
+                </a>
+            </li>
+            <li class="has-submenu">
+                <a href="#">
+                    <i class="fas fa-database"></i> <span>Resources</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="#vault-info">Vault Info</a></li>
+                    <li><a href="#dwellers">Dwellers</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="#">
+                    <i class="fas fa-book"></i> <span>Catalog</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="catalog.html">Browse All Games</a></li>
+                    <li><a href="catalog-rpg.html">RPG Games</a></li>
+                    <li><a href="catalog-indie.html">Indie Titles</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <main class="grid-container">
         
-        <section class="zona1">
+        <section class="zona1" id="vault-info">
             <h2>Welcome to the Vault!</h2>
             <p>The <strong>Vault</strong> is an online store available worldwide which offers premium <strong>video game rental</strong> and buying services. From indie gems to <strong>RPG games</strong>, our <strong>digital vault</strong> provides a large variety of adventures for every dweller.</p>
             <figure>
@@ -60,7 +66,7 @@
             </figure>
         </section>
 
-        <section class="zona5">
+        <section class="zona5" id="dwellers">
             <h3>Online Dwellers</h3>
             <ul>
                 <li>User_101: Active</li>
@@ -239,7 +245,43 @@
             Phone: <a href="tel:+40722000000">+40 722 000 000</a><br>
             E-mail: <a href="mailto:overseer@vault-tec.com">overseer@vault-tec.com</a>
         </address>
+        <p class="school-project"><small>Acesta este un proiect școlar</small></p>
         <p><small>Copyright © 2026 Vault - All Rights Reserved</small></p>
     </footer>
+
+<script>
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
+    const nav = document.querySelector('nav');
+    const mainMenu = document.querySelector('.main-menu');
+    const menuLinks = document.querySelectorAll('.main-menu a, .sub-menu a');
+
+    hamburgerBtn.addEventListener('click', () => {
+        hamburgerBtn.classList.toggle('active');
+        nav.classList.toggle('open');
+    });
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Dacă e un link cu submeniu, previne închiderea
+            const parentLi = link.parentElement;
+            if (parentLi.classList.contains('has-submenu') && link.getAttribute('href') === '#') {
+                e.preventDefault();
+                parentLi.classList.toggle('open');
+            } else {
+                // Închide meniul după click pe un link funcțional
+                hamburgerBtn.classList.remove('active');
+                nav.classList.remove('open');
+            }
+        });
+    });
+
+    // Închide meniu la click pe document
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('header')) {
+            hamburgerBtn.classList.remove('active');
+            nav.classList.remove('open');
+        }
+    });
+</script>
 </body>
 </html>

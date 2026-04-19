@@ -1,0 +1,13 @@
+{
+  "name": "vault-game-rental",
+  "version": "1.0.0",
+  "description": "Vault - Video game rental site with Fallout theme",
+  "author": "Daniel Burca-Andonie",
+  "scripts": {
+    "sass": "sass --watch resurse/css:resurse/css --style=compressed",
+    "sass-once": "sass resurse/css/style.scss resurse/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0"
+  }
+}
