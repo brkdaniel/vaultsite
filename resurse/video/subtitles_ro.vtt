@@ -1,0 +1,19 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  background: transparent;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+00:00:02.000 --> 00:00:04.000 position:50% line:5% align:middle
+Accesul doar pentru Overseer și staff autorizat
+
+00:00:05.000 --> 00:00:10.000 position:50% line:90% align:middle
+Bine ați venit la Vault-Tec
+Acest video prezintă aventura în lumea Fallout
+
+
+

@@ -1,0 +1,17 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-image: linear-gradient(to bottom, dimgray, lightgray);
+  background: transparent;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+}
+
+00:00:01.000 --> 00:00:03.000 position:50% line:5% align:middle
+Access only for Overseer and authorized staff
+
+00:00:04.000 --> 00:00:06.000 position:50% line:90% align:middle
+Welcome to Vault-Tec
+This video showcases the adventure in the Fallout world
+

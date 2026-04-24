@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="keywords" content="Vault, video game, Fallout, post-apocalyptic gaming, RPG games, gaming, game rental, vault dweller, bunker">
+    <meta name="description" content="Vault is your trusted source for video game rental inspired by the Fallout universe.">
+    <title>Vault - Uncover the next adventure</title>
+    <%- include('../fragmente/head.ejs') %>
+
+</head>
+
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    
+    <main class="grid-container">
+        
+        <section class="zona1" id="vault-info">
+            <h2>Welcome to the Vault!</h2>
+            <p>The <strong>Vault</strong> is an online store available worldwide which offers premium <strong>video game rental</strong> and buying services. From indie gems to <strong>RPG games</strong>, our <strong>digital vault</strong> provides a large variety of adventures for every dweller.</p>
+            <figure>
+                <picture>
+                    <source media="(max-width: 600px)" srcset="resurse/imagini/bunker-lowq.jpg">
+                    <source media="(min-width: 601px) and (max-width: 1024px)" srcset="resurse/imagini/bunker-medq.jpg">
+                    <img src="resurse/imagini/bunker.jpg" alt="The inside of Vault-Tec" title="See our gaming lounge" style="width:auto;">
+                </picture>
+                <figcaption>Standard living quarters for our premium <i>Vault Dwellers</i>.</figcaption>
+            </figure>
+        </section>
+
+        <section class="video-vtt">
+            <h2>Elden Ring - Vault Edition</h2>
+            <div class="video-container">
+                <video 
+                    width="100%" 
+                    poster="/resurse/imagini/bunker.jpg" 
+                    controls 
+                    preload="none"
+                    style="width: 100%; max-width: 800px; min-width: 300px; display: block; margin: 0 auto;">
+                    
+                    <source src="/resurse/video/eldenring.mp4" type="video/mp4">
+                    <source src="/resurse/video/eldenring.mkv" type="video/x-matroska">
+                    
+                    <track kind="subtitles" src="/resurse/video/subtitles_ro.vtt" srclang="ro" label="Română" default>
+                    <track kind="subtitles" src="/resurse/video/subtitles_en.vtt" srclang="en" label="English">
+                    
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="zona5" id="dwellers">
+            <h3>Online Dwellers</h3>
+            <ul>
+                <li>User_101: Active</li>
+                <li>Overseer_Backup: Idle</li>
+                <li>Vault_Tech_Support: Active</li>
+            </ul>
+        </section>
+
+        <section class="zona6">
+            <h3>User Statistics</h3>
+            <p>Current level: 15. Caps: 1200. Rad-resistance: 40%.</p>
+        </section>
+
+        <section class="zona7">
+            <h3>System Status</h3>
+            <p>Server: 127.0.0.1. Uptime: 99.9%. Connection: Lead-shielded.</p>
+            <p>User IP: <strong><%- locals.ip || 'localhost' %></strong></p>
+        </section>
+        
+        <section class="zona3" id="events">
+            <h2>Upcoming Wasteland Events</h2>
+            <ul>
+                <li>
+                    <time datetime="2026-05-15T18:00">May 15th, 18:00</time>, 
+                    <b>Retro RPG Night</b> - Join us for a <strong>game rental</strong> marathon.
+                </li>
+                <li>
+                    <time datetime="2026-06-20T12:00">June 20th, 12:00</time>, 
+                    <b>Vault Opening</b> - A special discount for every <strong>RPG games</strong> enthusiast.
+                </li>
+            </ul>
+        </section>
+
+        <section class="zona4">
+            <h2>Announcements</h2>
+            <p>Lorem ipsum: New shipments of Rad-Away arrived in Sector 4. Please report to the Overseer.</p>
+            <p><a href="#events" class="internal-link">Check upcoming events</a> | <a href="https://fallout.bethesda.net" class="external-link" target="_blank">Official Fallout Site</a></p>
+        </section>
+
+       <section class="zona2">
+            <h2>Rental Pricing Plans</h2>
+            <div class="table-responsive-container"> <table>
+                    <caption>Available Access Levels for Dwellers</caption>
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Duration</th>
+                            <th>Game Library</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Surface Scavenger</td>
+                            <td>24h</td>
+                            <td>Indie Titles</td>
+                            <td>10 Caps</td>
+                        </tr>
+                        <tr>
+                            <td>Vault Dweller</td>
+                            <td>7 Days</td>
+                            <td>All Games</td>
+                            <td>50 Caps</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">Overseer Bundle</td>
+                            <td>30 Days</td>
+                            <td>Full Access</td>
+                            <td>150 Caps</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Priority Support & Early Access included</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">Total Membership Benefits</td>
+                            <td>Unlimited</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <section class="video-tabs-section">
+        <h2>Vault Training Media</h2>
+        <div class="taburi_iframe">
+            <div class="tabs-container">
+                <a href="https://www.youtube.com/embed/KmhMEHMgoHc" target="vault-player" class="tab-link">Fallout 76</a>
+                <a href="https://www.youtube.com/embed/QdBZY2fkU-0" target="vault-player" class="tab-link">GTA VI</a>
+                <a href="https://www.youtube.com/embed/YyWcrDKg9hA" target="vault-player" class="tab-link">Mewgenics</a>
+                <a href="https://www.youtube.com/embed/se0qytSM218" target="vault-player" class="tab-link">Fallout Trailer</a>
+            </div>
+
+            <div class="iframe-wrapper">
+                <iframe name="vault-player" src="https://www.youtube.com/embed/se0qytSM218" title="Vault Media Player" allowfullscreen></iframe>
+            </div>
+        </div>
+        </section>
+
+    
+
+            <section>
+                <h2>Vault Status Monitor</h2>
+                <p>Supplies: <meter value="15" min="0" max="100" low="30" high="70">Safe</meter></p>
+                <p>Server Load: <meter value="85" min="0" max="100" low="20" high="40">High</meter></p>
+            </section>
+
+            <section>
+                <h2>Game Mechanics & Calculations</h2>
+                <p><strong>Weapon Damage Formula:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>Damage</mi>
+                            <mo>=</mo>
+                            <mo>(</mo>
+                            <mi>Base</mi>
+                            <mo>×</mo>
+                            <mn>1.5</mn>
+                            <mo>)</mo>
+                            <mo>+</mo>
+                            <mi>CritBonus</mi>
+                        </mrow>
+                    </math>
+                </p>
+                <p><strong>Experience Points Calculation:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>XP</mi>
+                            <mo>=</mo>
+                            <mfrac>
+                                <mrow>
+                                    <mi>EnemyLevel</mi>
+                                    <mo>×</mo>
+                                    <mn>100</mn>
+                                </mrow>
+                                <mi>PlayerLevel</mi>
+                            </mfrac>
+                        </mrow>
+                    </math>
+                </p>
+                <p><strong>Radiation Resistance Index:</strong></p>
+                <p>
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mi>ResistanceIndex</mi>
+                            <mo>=</mo>
+                            <msqrt>
+                                <mi>Endurance</mi>
+                            </msqrt>
+                            <mo>+</mo>
+                            <mi>Perk</mi>
+                        </mrow>
+                    </math>
+                </p>
+            </section>
+
+            <section>
+                <h2>FAQ & Technical</h2>
+                <details>
+                    <summary>Can I return a game after 7 days?</summary>
+                    <p>Late returns incur a penalty of 5 caps/day.</p>
+                </details>
+                <p>System uses <abbr title="Personal Information Processor">PIP-Boy</abbr> interface.</p>
+                <p>Download: <a href="resurse/manual.pdf" download="Vault_Manual.pdf">Get Manual PDF</a></p>
+            </section>
+        </section>
+
+    </main>
+    <%- include('../fragmente/footer.ejs') %>
+</body>
+
+</html>
