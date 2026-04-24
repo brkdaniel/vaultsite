@@ -51,7 +51,7 @@ for (let folder of vect_foldere){
 }
 
 app.use("/resurse",express.static(path.join(__dirname, "resurse")));
-// app.use("/dist",express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
+app.use("/dist",express.static(path.join(__dirname, "node_modules/bootstrap/dist")));
 
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname,"resurse/imagini/favicon/favicon.ico"))
@@ -102,6 +102,8 @@ function afisareEroare(res, identificator, titlu, text, imagine){
     });
 
 }
+
+//GALERIA ANIMATA
 
 // app.get("*/galerie-animata.css",function(req, res){
 
@@ -157,54 +159,56 @@ function afisareEroare(res, identificator, titlu, text, imagine){
 // initImagini();
 
 
-// function compileazaScss(caleScss, caleCss){
-//     if(!caleCss){
+// COMPILAREA SCSS - CERINTA B
+function compileazaScss(caleScss, caleCss){
+    if(!caleCss){
 
-//         let numeFisExt=path.basename(caleScss); // "folder1/folder2/a.scss" -> "a.scss"
-//         let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
-//         caleCss=numeFis+".css"; // output: a.css
-//     }
+        let numeFisExt=path.basename(caleScss); // "folder1/folder2/a.scss" -> "a.scss"
+        let numeFis=numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
+        caleCss=numeFis+".css"; // output: a.css
+    }
     
-//     if (!path.isAbsolute(caleScss))
-//         caleScss=path.join(obGlobal.folderScss,caleScss )
-//     if (!path.isAbsolute(caleCss))
-//         caleCss=path.join(obGlobal.folderCss,caleCss )
+    if (!path.isAbsolute(caleScss))
+        caleScss=path.join(obGlobal.folderScss,caleScss )
+    if (!path.isAbsolute(caleCss))
+        caleCss=path.join(obGlobal.folderCss,caleCss )
     
-//     let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
-//     if (!fs.existsSync(caleBackup)) {
-//         fs.mkdirSync(caleBackup,{recursive:true})
-//     }
+    let caleBackup=path.join(obGlobal.folderBackup, "resurse/css");
+    if (!fs.existsSync(caleBackup)) {
+        fs.mkdirSync(caleBackup,{recursive:true})
+    }
     
-//     // la acest punct avem cai absolute in caleScss si  caleCss
+    // la acest punct avem cai absolute in caleScss si  caleCss
 
-//     let numeFisCss=path.basename(caleCss);
-//     if (fs.existsSync(caleCss)){
-//         fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css",numeFisCss ))// +(new Date()).getTime()
-//     }
-//     rez=sass.compile(caleScss, {"sourceMap":true});
-//     fs.writeFileSync(caleCss,rez.css)
+    let numeFisCss=path.basename(caleCss);
+    if (fs.existsSync(caleCss)){
+        fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css",numeFisCss ))// +(new Date()).getTime()
+    }
+    rez=sass.compile(caleScss, {"sourceMap":true});
+    fs.writeFileSync(caleCss,rez.css)
     
-// }
+}
 
 
-//la pornirea serverului
-// vFisiere=fs.readdirSync(obGlobal.folderScss);
-// for( let numeFis of vFisiere ){
-//     if (path.extname(numeFis)==".scss"){
-//         compileazaScss(numeFis);
-//     }
-// }
+// COMPILAREA INITIALA CERINTA D - - la pornirea serverului
+vFisiere=fs.readdirSync(obGlobal.folderScss);
+for( let numeFis of vFisiere ){
+    if (path.extname(numeFis)==".scss"){
+        compileazaScss(numeFis);
+    }
+}
 
+// COMPILARE PE PARCURS CERINTA E
+fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
+    if (eveniment=="change" || eveniment=="rename"){
+        let caleCompleta=path.join(obGlobal.folderScss, numeFis);
+        if (fs.existsSync(caleCompleta)){
+            compileazaScss(caleCompleta);
+        }
+    }
+})
 
-// fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
-//     if (eveniment=="change" || eveniment=="rename"){
-//         let caleCompleta=path.join(obGlobal.folderScss, numeFis);
-//         if (fs.existsSync(caleCompleta)){
-//             compileazaScss(caleCompleta);
-//         }
-//     }
-// })
-
+// RUTE DINAMICE - CERINTA C
 
 app.get("/*pagina", function(req, res){
     console.log("Cale pagina", req.url);
@@ -228,7 +232,7 @@ app.get("/*pagina", function(req, res){
             }
             else{
                 res.send(rezRandare);
-                //console.log("Rezultat randare", rezRandare);
+                console.log("Rezultat randare", rezRandare);
             }
         });
     }

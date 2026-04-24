@@ -255,6 +255,27 @@ a:not([href^="http"]):not([href^="mailto"]):not([href^="tel"]) {
 }
 
 // =========================================
+// HR - VAULT SEPARATOR
+// =========================================
+hr.efect-css-stilizare-hr {
+    display: none;
+    border: none;
+    height: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        $vault-gold 0px,
+        $vault-gold 10px,
+        $primary-blue 10px,
+        $primary-blue 20px,
+        transparent 20px,
+        transparent 30px
+    );
+    border-radius: 8px;
+    margin: 30px 0;
+    box-shadow: $shadow-box;
+}
+
+// =========================================
 // LAYOUT CONTAINER
 // =========================================
 header,
@@ -753,6 +774,9 @@ table {
         min-width: 100%;
     }
 
+    hr.efect-css-stilizare-hr {
+        display: block;
+    }
 
     #hamburger {
     display: flex;
@@ -1437,4 +1461,441 @@ table {
     max-width: 100px;
     height: auto;
     margin: 0;
+}
+
+// =========================================
+// CATALOG PAGE STYLING
+// =========================================
+.catalog-container {
+    display: flex;
+    flex-direction: column;
+    gap: $grid-gap;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 $pag-margin;
+}
+
+// Catalog Header
+.catalog-header {
+    @extend %zone-base;
+    background: linear-gradient(rgba($primary-blue, 0.2), rgba(0, 0, 0, 0.8));
+    border-left: 5px solid $vault-gold;
+    border-right: 2px solid $vault-gold;
+    text-align: center;
+    padding: 40px $common-padding;
+
+    h1 {
+        color: $vault-gold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        font-size: 2.5rem;
+    }
+
+    p {
+        color: $text-light;
+        font-size: 1.1rem;
+        margin: 0;
+    }
+}
+
+// Featured Game Section
+.game-featured {
+    @extend %zone-base;
+    border: 2px solid $vault-gold;
+    background-color: rgba($vault-gold, 0.05);
+
+    
+    #imagine{
+        position:relative;
+        background-image:url("../imagini/assassinscreedvalhalla.jpg");
+        background-size:cover;
+        background-position: center;
+        width:500px; 
+        height: 500px;
+        filter:brightness(200%) grayscale(0) ;
+        transition:all 2s linear;
+        overflow: hidden;
+        border-radius: 8px;
+
+        .imagine-fallback {
+            display: none;
+        }
+    }
+
+    #imagine::before, #imagine::after {
+        content:" ";
+        position:absolute;
+        height:100%;
+        width:100%;
+        top:0;
+        transition: left 0.6s ease-in-out;
+    }
+
+    #imagine::before {
+        background-color: var(--vault-gold);
+        mix-blend-mode: darken;
+        left: -100%;
+    }
+
+    #imagine::after {
+        background-color: var(--primary-blue);
+        mix-blend-mode: lighten;
+        left: 100%;
+    }
+
+    #imagine:hover::before {
+        left: 0;
+    }
+
+    #imagine:hover::after {
+        left: 0;
+    }
+
+    h2 {
+        color: $vault-gold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 1.6rem;
+    }
+
+    .featured-game {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        figure {
+            flex: 0 1 400px;
+            margin: 0;
+            padding: 0;
+
+            picture, img {
+                display: block;
+                width: 100%;
+                height: auto;
+                border: 2px solid $border-metal;
+                border-radius: 8px;
+                box-shadow: $shadow-box;
+            }
+
+            figcaption {
+                color: $text-light;
+                font-size: 0.95rem;
+                margin-top: 12px;
+                padding: 0 10px;
+                border-left: 3px solid $vault-gold;
+                padding-left: 15px;
+                font-style: italic;
+            }
+        }
+
+        .game-info {
+            flex: 1 1 300px;
+            min-width: 250px;
+
+            h3 {
+                color: $vault-gold;
+                font-size: 1.8rem;
+                margin: 0 0 15px 0;
+            }
+
+            p {
+                color: $text-light;
+                line-height: 1.6;
+                margin: 8px 0;
+                font-size: 0.95rem;
+
+                strong {
+                    color: $vault-gold;
+                }
+            }
+
+            .price-section {
+                margin-top: 25px;
+                padding-top: 20px;
+                border-top: 2px dashed $border-metal;
+
+                .original-price {
+                    display: inline-block;
+                    color: #999;
+                    text-decoration: line-through;
+                    margin-right: 15px;
+                    font-size: 1.1rem;
+                }
+
+                .sale-price {
+                    display: inline-block;
+                    color: $vault-gold;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-right: 15px;
+                }
+
+                .discount {
+                    color: #4ade80;
+                    font-size: 0.9rem;
+                    margin: 10px 0 15px 0;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+// Games Grid
+.games-grid {
+    @extend %zone-base;
+    border: 2px dashed $vault-gold;
+
+    h2 {
+        color: $vault-gold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 1.6rem;
+        width: 100%;
+    }
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $grid-gap;
+}
+
+// Game Card
+.game-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid $border-metal;
+    border-radius: 8px;
+    padding: $common-padding;
+    @include transition-all;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        color: $vault-gold;
+        font-size: 1.2rem;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .price {
+        color: $vault-gold;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 8px 0;
+    }
+
+    .description {
+        color: $text-light;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 8px 0;
+        flex-grow: 1;
+    }
+
+    .platform {
+        color: #999;
+        font-size: 0.85rem;
+        margin: 8px 0 15px 0;
+    }
+
+    &:hover {
+        background-color: rgba($vault-gold, 0.1);
+        border-color: $vault-gold;
+        box-shadow: $shadow-box, inset 0 0 20px rgba($vault-gold, 0.1);
+        transform: translateY(-3px);
+    }
+
+    &:hover h4 {
+        color: #ffffff;
+        text-shadow: 0 0 10px $vault-gold;
+    }
+}
+
+// Buttons
+.btn-buy,
+.btn-add-cart {
+    background: linear-gradient(135deg, $primary-blue 0%, rgba($primary-blue, 0.7) 100%);
+    border: 2px solid $vault-gold;
+    color: $text-light;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    @include transition-all($transition-speed);
+    align-self: flex-start;
+
+    &:hover {
+        background: linear-gradient(135deg, $vault-gold 0%, rgba($vault-gold, 0.8) 100%);
+        color: $bg-dark;
+        box-shadow: 0 0 20px rgba($vault-gold, 0.5);
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(0.98);
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.btn-buy {
+    margin-top: 15px;
+    padding: 15px 32px;
+    font-size: 1.1rem;
+}
+
+// Catalog Info & Benefits
+.catalog-info {
+    @extend %zone-base;
+    border: 2px solid $vault-gold;
+    background-color: rgba($vault-gold, 0.05);
+
+    h2 {
+        color: $vault-gold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .benefits {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+.benefit-item {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid $vault-gold;
+    border-radius: 6px;
+    padding: 20px;
+    @include transition-all;
+    text-align: center;
+
+    h4 {
+        color: $vault-gold;
+        font-size: 1.3rem;
+        margin: 0 0 10px 0;
+    }
+
+    p {
+        color: $text-light;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    &:hover {
+        background-color: rgba($vault-gold, 0.1);
+        transform: translateY(-5px);
+        box-shadow: $shadow-box;
+    }
+}
+
+// =========================================
+// MEDIA QUERIES - CATALOG RESPONSIVE
+// =========================================
+@media (min-width: 601px) and (max-width: 1024px) {
+    .catalog-header {
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+
+    .game-featured .featured-game {
+        gap: 20px;
+
+        figure {
+            flex: 0 1 300px;
+        }
+
+        .game-info {
+            flex: 1 1 250px;
+        }
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-container {
+        padding: 0 15px;
+    }
+
+    .catalog-header {
+        padding: 30px 15px;
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
+    .game-featured .featured-game {
+        flex-direction: column;
+        gap: 20px;
+
+        figure {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        .game-info {
+            flex: 1 1 100%;
+        }
+    }
+
+    .game-card {
+        padding: 15px;
+
+        h4 {
+            font-size: 1.1rem;
+        }
+
+        .price {
+            font-size: 1.3rem;
+        }
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+    }
+
+    .btn-buy,
+    .btn-add-cart {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.95rem;
+    }
 }

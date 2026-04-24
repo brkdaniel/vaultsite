@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="keywords" content="video games, buy games, game store, Assassins Creed Valhalla, RPG, adventure">
+    <meta name="description" content="Complete catalog of video games available for purchase at Vault Store. Discover the most popular titles.">
+    <title>Vault - Game Catalog</title>
+    <%- include('../fragmente/head.ejs') %>
+</head>
+
+<body>
+    <%- include('../fragmente/header.ejs') %>
+    
+    <main class="grid-container catalog-container">
+        
+        <section class="catalog-header">
+            <h1>Game Catalog - Vault Store</h1>
+            <p>Explore our collection of premium game titles. All games are available for purchase with rapid delivery worldwide.</p>
+        </section>
+
+        <section class="game-featured">
+            <h2>Featured Game</h2>
+            <div class="featured-game">
+                <figure>
+                    <div id="imagine" role="img" aria-label="Assassin's Creed Valhalla promotional art showing a Viking warrior"></div>
+                    <figcaption>Assassin's Creed Valhalla: Explore the Viking medieval era in an epic adventure filled with action and military strategy.</figcaption>
+                </figure>
+                <div class="game-info">
+                    <h3>Assassin's Creed Valhalla</h3>
+                    <p><strong>Platforms:</strong> PS5, Xbox Series X, PC, Nintendo Switch</p>
+                    <p><strong>Genre:</strong> Action RPG, Historical Adventure</p>
+                    <p><strong>Rating:</strong> ★★★★★ (4.8/5 - 2,547 reviews)</p>
+                    <p><strong>Description:</strong> Become a legendary Viking leader and build an empire in medieval England. Combine intense combat with a captivating narrative, exploring wild landscapes and impressive fortifications. The game perfectly blends Assassin's Creed gameplay with RPG elements for an immersive experience.</p>
+                    <div class="price-section">
+                        <span class="original-price">$79.99</span>
+                        <span class="sale-price">$59.99</span>
+                        <p class="discount">-25% promotional period</p>
+                        <button class="btn-buy">Buy Now - $59.99</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="games-grid">
+            <h2>Other Available Titles</h2>
+            
+            <div class="game-card">
+                <h4>The Witcher 3: Wild Hunt</h4>
+                <p class="price">$44.99</p>
+                <p class="description">A spectacular fantasy adventure with a massive open world and hundreds of hours of gameplay.</p>
+                <p class="platform">All platforms</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="game-card">
+                <h4>Elden Ring</h4>
+                <p class="price">$29.99</p>
+                <p class="description">Challenging game with innovative gameplay and a magical world to explore.</p>
+                <p class="platform">PS5, Xbox Series X, PC</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="game-card">
+                <h4>Baldur's Gate 3</h4>
+                <p class="price">$34.99</p>
+                <p class="description">RPG full of captivating stories and choices that will change your destiny.</p>
+                <p class="platform">PC, PS5</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="game-card">
+                <h4>Cyberpunk 2077</h4>
+                <p class="price">$39.99</p>
+                <p class="description">Dystopian game with a vibrant world and missions filled with action.</p>
+                <p class="platform">All platforms</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="game-card">
+                <h4>Starfield</h4>
+                <p class="price">$37.99</p>
+                <p class="description">Explore a massive universe with hundreds of planets and unique destinations.</p>
+                <p class="platform">Xbox Series X, PC</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+
+            <div class="game-card">
+                <h4>Hogwarts Legacy</h4>
+                <p class="price">$32.99</p>
+                <p class="description">Become a wizard and explore Hogwarts Castle in detail.</p>
+                <p class="platform">All platforms</p>
+                <button class="btn-add-cart">Add to Cart</button>
+            </div>
+        </section>
+
+        <section class="catalog-info">
+            <h2>Why Shop at Vault?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <h4>🚚 Free Shipping</h4>
+                    <p>Fast delivery worldwide in 1-2 days.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>💳 Secure Payments</h4>
+                    <p>We support cards, bank transfers, and cash on delivery.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>🎮 Warranty</h4>
+                    <p>14-day return guarantee for any product.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>⭐ 24/7 Support</h4>
+                    <p>Our team is always ready to help.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <%- include('../fragmente/footer.ejs') %>
+</body>
+
+</html>
